@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import './TodoList.css';
-import Input from '../../components/Input/Input';
-import Listing from '../../components/Listing/Listing';
+import TodoListView from './components/TodoListView/TodoListView';
 
 export default class TodoList extends PureComponent {
 
@@ -60,16 +58,14 @@ export default class TodoList extends PureComponent {
 
     render() {
         return (
-            <div className="TodoList">
-                <Input InputHandler={this.inputHandler}
-                    inputValue={this.state.inputValue}
-                    addHandler={this.addHandler}
-                    keyPressHandler={this.keyPress}
-                    isValid={this.state.isValid} />
-                <Listing listings={this.state.Listing}
-                    isDoneHandler={this.isDoneToggleHandler}
-                    removeListHandler={this.removeListHandler} />
-            </div>
+            <TodoListView inputHandler={this.inputHandler}
+                inputValue={this.state.inputValue}
+                addHandler={this.addHandler}
+                keyPressHandler={this.keyPress}
+                isValid={this.state.isValid} 
+                listings={this.state.Listing}
+                isDoneHandler={this.isDoneToggleHandler}
+                removeListHandler={this.removeListHandler}/>
         )
     }
 }

@@ -12,7 +12,7 @@ export default function Input(props) {
                    className="Input__value" 
                    value={props.inputValue}
                    onKeyDown={props.keyPressHandler} 
-                   onChange={props.InputHandler} />
+                   onChange={props.inputHandler} />
             <button className="Input__btn" 
                     disabled={!isValid}
                     onClick={props.addHandler}>Add

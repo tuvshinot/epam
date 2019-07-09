@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import TodoList from './containers/TodoList/TodoList';
+import TodoListContainer from './TodoList/TodoListContainer';
 
 class App extends Component {
   render() {
-    return <TodoList />
+    return <TodoListContainer />
   }
 }
 
