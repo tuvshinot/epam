@@ -15,7 +15,7 @@ export default function Input(props) {
                    onChange={props.InputHandler} />
             <button className="Input__btn" 
                     disabled={!isValid}
-                    onClick={props.addHandler}>Add
+                    onClick={() => { props.addHandler(props.inputValue); props.clearInputValue() }  }>Add
             </button>
         </div>
     )

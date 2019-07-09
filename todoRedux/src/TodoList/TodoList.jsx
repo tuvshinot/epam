@@ -22,28 +22,15 @@ class TodoList extends PureComponent {
         this.setState({ inputValue: e.target.value })
     }
 
-    addInputToList = (e) => {
-        this.props.addTodo(this.state.inputValue)
+    clearInputValue = (e) => {
         this.setState({ inputValue: '' })
-    }
-
-    removeListHandler = (e, idx) => {
-        e.stopPropagation()
-        this.props.removeTodo(idx)
-    }
-
-    isDoneToggleHandler = (idx) => {
-        this.props.isDoneToggle(idx)
     }
 
     keyPress = (e) => {
         if (e.keyCode === 13) {
-            this.addInputToList(e)
+            this.props.addTodo(this.state.inputValue)
+            this.clearInputValue()
         }
-    }
-
-    addHandler = (e) => {
-        this.addInputToList(e);
     }
 
     inputValidator = (inputValue) => {
@@ -59,12 +46,13 @@ class TodoList extends PureComponent {
             <div className="TodoList">
                 <Input InputHandler={this.inputHandler}
                     inputValue={this.state.inputValue}
-                    addHandler={this.addHandler}
+                    addHandler={this.props.addTodo}
                     keyPressHandler={this.keyPress}
+                    clearInputValue={this.clearInputValue}
                     isValid={this.state.isValid} />
                 <Listing listings={this.props.Listing}
-                    isDoneHandler={this.isDoneToggleHandler}
-                    removeListHandler={this.removeListHandler} />
+                    isDoneHandler={this.props.isDoneToggle}
+                    removeListHandler={this.props.removeTodo} />
             </div>
         )
     }
