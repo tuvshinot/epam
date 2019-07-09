@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Provider} from 'react-redux';
 
-import TodoList from './containers/TodoList/TodoList';
+import TodoList from './TodoList/TodoList';
 import {configureStore} from './store';
 
 const store = configureStore();

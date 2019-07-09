@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux';
 
-import { addTodo, removeTodo, isDoneToggle } from '../../store/actions/todo';
+import { addTodo, removeTodo, isDoneToggle } from '../store/actions/todo';
 import './TodoList.css';
-import Input from '../../components/Input/Input';
-import Listing from '../../components/Listing/Listing';
+import Input from './components/Input/Input';
+import Listing from './components/Listing/Listing';
 
 class TodoList extends PureComponent {
 
